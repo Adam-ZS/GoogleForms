@@ -1,18 +1,19 @@
 # GoogleForm Auto Filler
 
-This Python script automates the process of filling out and submitting a Google Form multiple times using the Selenium WebDriver with (( Firefox )). 
+This Python script automates the process of filling out randome choices and submitting a Google Form multiple times using the Selenium WebDriver with (( Firefox )). 
+Good For projects.
 
 It operates in headless mode (no visible browser window) for faster execution. 
 No TEXT QUESTIONS, only mcq's, checkboxes, ratings, ect..
 Works with FIREFOX!
 
-The automation does the following -
-It loads the specified Google Form URL and waits for the form to be fully loaded. 
-For each form question, it selects random answers (either radio buttons or checkboxes).
-If a grid (Rate) question is detected, it randomly selects an option from the grid.
-If any question is unanswered due to elements being stale or not interactable, the script retries those questions.
-Once all questions are answered, the script submits the form and moves on to the next submission.
-The process repeats for a specified number of submissions.
+# Features
+✔ Headless Mode – Runs without opening a browser for faster execution.
+✔ Random Answer Selection – Works with multiple-choice, checkboxes, and rating grids (⚠ No text-based answers).
+✔ Error Handling – Retries unanswered questions to prevent skipping.
+✔ Auto Form Submission – Clears cookies after each submission for fresh data.
+
+
 
 This script also ensures that it retries unanswered questions to avoid incomplete form submissions, handles element issues gracefully, and clears cookies after each submission for a clean slate on subsequent form submissions.
 
@@ -35,10 +36,12 @@ GeckoDriver (for Firefox)
 Firefox Browser
 
     sudo apt install firefox
-# If you faced (error: externally-managed-environment) just run the enviroment commands.
+# ⚠ If you get (error: externally-managed-environment), use a virtual environment
 
-        python -m venv myenv
-        source myenv/bin/activate
+    python -m venv myenv  
+    source myenv/bin/activate  
+    pip install selenium webdriver-manager  
+
 
 # Get Started
     git clone https://github.com/Adam-ZS/GoogleForms.git
@@ -56,4 +59,9 @@ Mostly you will need to use a virtual environment
 # Run it
         python form_fillerz.py
 
+        
+# Output / Results
 ![image](https://github.com/user-attachments/assets/f852cf29-6d36-4b78-bf00-707e83cd5f11)
+
+![image](https://github.com/user-attachments/assets/bbac95f2-fcf0-43b5-aaf3-acf8f51503ac)
+

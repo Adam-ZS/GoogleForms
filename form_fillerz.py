@@ -7,6 +7,21 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, StaleElementReferenceException
 import random
 import time
+parrot = r"""
+                \       /
+                 \ .--./
+    ;;          - <o  o>  -            ;;;
+                  | -- |              ;;;
+    ``            |    |  
+                  `----'    ````''
+          =====   //  \\    ====Or no problem, you can use the original one I think its better 
+                 //    \\
+                //      \\ 
+               ||©Adam-ZS||
+               ||  ~~~~  ||
+             --`'--l---l---'`--
+"""
+print(parrot)
 
 def run_automation(form_url, submissions):
     # Configure Firefox for max speed

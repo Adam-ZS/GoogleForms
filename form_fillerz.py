@@ -14,7 +14,7 @@ parrot = r"""
                   | -- |              ;;;
     ``            |    |  
                   `----'    ````''
-          =====   //  \\    ====Or no problem, you can use the original one I think its better 
+oO  oO  oO=====   //  \\    ====Oo  Oo  Oo
                  //    \\
                 //      \\ 
                ||©Adam-ZS||

@@ -35,7 +35,7 @@ GeckoDriver (for Firefox)
 Firefox Browser
 
     sudo apt install firefox
-*If you faced (error: externally-managed-environment) just run the enviroment before.
+# If you faced (error: externally-managed-environment) just run the enviroment commands.
 
         python -m venv myenv
         source myenv/bin/activate

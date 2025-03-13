@@ -1,7 +1,7 @@
 # GoogleForm Auto Filler, Auto Fill & Submit in Seconds!
 
 This Python script automates the process of filling out randome choices and submitting a Google Form multiple times using the Selenium WebDriver with (( Firefox )). 
-Good For projects.
+*Good For projects.*
 
 It operates in headless mode (no visible browser window) for faster execution. 
 No TEXT QUESTIONS, only mcq's, checkboxes, ratings, ect..
@@ -9,8 +9,11 @@ Works with FIREFOX!
 
 # Features
 ✔ Headless Mode – Runs without opening a browser for faster execution.
+
 ✔ Random Answer Selection – Works with multiple-choice, checkboxes, and rating grids (⚠ No text-based answers).
+
 ✔ Error Handling – Retries unanswered questions to prevent skipping.
+
 ✔ Auto Form Submission – Clears cookies after each submission for fresh data.
 
 

@@ -37,8 +37,8 @@ Firefox Browser
 
     sudo apt install firefox
 # Get Started
-    git clone https://github.com/adam-soman/form-fillerz.git
-    cd form-fillerz
+    git clone https://github.com/Adam-ZS/GoogleForms.git
+    cd GoogleForms
 
     
 # Install Dependencies

@@ -4,6 +4,7 @@ This Python script automates the process of filling out and submitting a Google 
 
 It operates in headless mode (no visible browser window) for faster execution. 
 No TEXT QUESTIONS, only mcq's, checkboxes, ratings, ect..
+Works with FIREFOX!
 
 The automation does the following:
 
@@ -15,3 +16,39 @@ The automation does the following:
     The process repeats for a specified number of submissions.
 
 This script also ensures that it retries unanswered questions to avoid incomplete form submissions, handles element issues gracefully, and clears cookies after each submission for a clean slate on subsequent form submissions.
+
+# Requirements
+
+
+Python 3:
+
+    sudo apt update
+    sudo apt install python3 python3-pip
+
+Selenium
+
+    pip install selenium
+
+GeckoDriver (for Firefox)
+    
+    pip install webdriver-manager
+
+Firefox Browser
+
+    sudo apt install firefox
+# Get Started
+    git clone https://github.com/adam-soman/form-fillerz.git
+    cd form-fillerz
+
+    
+# Install Dependencies
+
+Mostly you will need to use a virtual environment
+
+    python -m venv myenv
+    source myenv/bin/activate  # On Linux/macOS
+    pip install selenium webdriver-manager
+
+# Run it
+        python form_fillerz.py
+

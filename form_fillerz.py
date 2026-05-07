@@ -23,8 +23,39 @@ oO  oO  oO=====   //  \\    ====Oo  Oo  Oo
              --`'--l---l---'`--
 """
 
-# Configuration
+# Configuration, in case u dont want it to choose other and write smth
 GLOBAL_EXCLUSIONS = ["medical", "other", "__other_option__", "اخرى", "other:", "أخرى:"]
+
+# Text responses pool - randomly selected for text input questions, remove the "other" from global extentions
+TEXT_RESPONSES = [
+    "No",
+    "None",
+    "N/A",
+    "Nothing to add",
+    "Good",
+    "Great",
+    "Excellent",
+    "Very good",
+    "Satisfactory",
+    "Acceptable",
+    "Fine",
+    "Okay",
+    "Yes",
+    "Agree",
+    "I agree",
+    "Strongly agree",
+    "Noted",
+    "Understood",
+    "Thank you",
+    "Appreciate it",
+    "Looking forward",
+    "All clear",
+    "Perfect",
+    "Sounds good",
+    "Will do",
+    "Confirmed",
+    "Acknowledged"
+]
 
 def fill_google_form(driver, form_url):
     """
@@ -125,12 +156,14 @@ def fill_google_form(driver, form_url):
                         continue
 
                     # ============================================
-                    # TEXT INPUTS
+                    # TEXT INPUTS (Short answer & Paragraph)
                     # ============================================
                     text_inputs = q_block.find_elements(By.CSS_SELECTOR, "textarea, input[type='text']")
                     if text_inputs:
                         if not text_inputs[0].get_attribute("value"):
-                            text_inputs[0].send_keys("N/A")
+                            # Pick a random response from the pool
+                            response = random.choice(TEXT_RESPONSES)
+                            text_inputs[0].send_keys(response)
                         
                         finished_titles.add(title)
                         continue
@@ -170,7 +203,7 @@ def fill_google_form(driver, form_url):
                 time.sleep(1.0)
 
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
         return False
 
 def run_automation():
@@ -180,8 +213,8 @@ def run_automation():
     print("Google Forms Auto Filler by Adam-ZS")
     print("=" * 50)
     
-    form_url = input("\n📋 Enter Google Form URL: ").strip()
-    num_submissions = int(input("🔢 How many submissions? "))
+    form_url = input("\n Enter Google Form URL: ").strip()
+    num_submissions = int(input(" How many submissions? "))
 
     # Configure Firefox for headless mode
     options = Options()
@@ -201,15 +234,15 @@ def run_automation():
     print(f"\n🚀 Starting {num_submissions} submissions...\n")
     
     for i in range(num_submissions):
-        print(f"📝 Submitting form {i+1}/{num_submissions}...")
+        print(f" Submitting form {i+1}/{num_submissions}...")
         
         if fill_google_form(driver, form_url):
             try:
                 WebDriverWait(driver, 5).until(EC.url_contains("formResponse"))
                 total += 1
-                print(f"✅ Submission {i+1} completed successfully!")
+                print(f" Submission {i+1} completed successfully!")
             except:
-                print(f"⚠️  Submission {i+1} may have failed")
+                print(f"  Submission {i+1} may have failed")
         
         driver.delete_all_cookies()
 
@@ -217,9 +250,9 @@ def run_automation():
     driver.quit()
     
     print("\n" + "=" * 50)
-    print(f"🎉 Finished: {total}/{num_submissions} successful submissions")
-    print(f"⏱️  Total time: {elapsed_time:.2f} seconds")
-    print(f"⚡ Average: {elapsed_time/num_submissions:.2f} seconds per submission")
+    print(f" Finished: {total}/{num_submissions} successful submissions")
+    print(f" Total time: {elapsed_time:.2f} seconds")
+    print(f"Average: {elapsed_time/num_submissions:.2f} seconds per submission")
     print("=" * 50)
 
 if __name__ == "__main__":

@@ -26,7 +26,7 @@ oO  oO  oO=====   //  \\    ====Oo  Oo  Oo
 # Configuration, in case u dont want it to choose other and write smth
 GLOBAL_EXCLUSIONS = ["medical", "other", "__other_option__", "اخرى", "other:", "أخرى:"]
 
-# Text responses pool - randomly selected for text input questions, remove the "other" from global extentions
+# Text responses pool - randomly selected for text input questions, remove the "other" from global extentionss
 TEXT_RESPONSES = [
     "No",
     "None",
